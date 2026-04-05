@@ -27,6 +27,7 @@ Merci de t’intéresser à WeBot. Ce dépôt est **open source** : les contribu
 - **Petites PR** : plus faciles à relire et à intégrer.
 - **Décrire le « pourquoi »** : contexte, cas d’usage, capture ou exemple si c’est de l’UI côté bot.
 - **Sécurité** : ne commite jamais de jetons, mots de passe ou secrets. Voir [SECURITY.md](SECURITY.md) pour signaler un problème sensible.
+- **Fichiers locaux** : ne versionne pas `.env` (ni `DISCORD_CLIENT_ID` / `DISCORD_GUILD_ID` en dur dans le code). Utilise uniquement [`.env.example`](.env.example) comme modèle sans valeurs réelles. Avant un push, vérifie avec `git status` que `.env` n’apparaît pas en « staged ».
 
 ## Signaler un bug ou proposer une fonctionnalité
 

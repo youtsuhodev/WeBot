@@ -28,9 +28,44 @@ WeBot vise à être un **outil unique et extensible** pour la modération, les u
 | Élément        | Statut                                      |
 | -------------- | ------------------------------------------- |
 | Dépôt & communauté | En place (README, contribution, sécurité) |
-| Code applicatif    | À venir dans ce dépôt                     |
+| Code applicatif    | Base **Node.js** + **Discord.js** (`src/`)  |
 
 Les fichiers de gouvernance (licence, conduite, contribution, signalement de vulnérabilités) sont prêts pour accueillir le développement du bot.
+
+## Démarrage rapide (développement)
+
+> [!NOTE]
+> Prérequis : [Node.js](https://nodejs.org/) **20+** et une application bot sur le [portail développeur Discord](https://discord.com/developers/applications).
+
+1. Clone le dépôt et installe les dépendances :
+
+   ```bash
+   npm install
+   ```
+
+2. Copie la configuration d’exemple et renseigne le jeton et l’ID d’application :
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Sous Windows (PowerShell) : `Copy-Item .env.example .env`
+
+3. Enregistre les **commandes slash** (une fois après ajout ou modification de commandes) :
+
+   ```bash
+   npm run deploy-commands
+   ```
+
+   Pour un déploiement **instantané** sur un seul serveur, définis `DISCORD_GUILD_ID` dans `.env` avant la même commande.
+
+4. Lance le bot :
+
+   ```bash
+   npm start
+   ```
+
+La commande `/about` rappelle que le projet est open source et comment contribuer.
 
 ---
 

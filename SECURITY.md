@@ -21,3 +21,12 @@ Nous nous efforcerons d’accuser réception et de te tenir informé·e de l’a
 
 - Ne commite jamais de **jetons Discord**, clés API, mots de passe ou fichiers `.env`.
 - Révise le code des PR avec un œil sur les **injections**, **fuites de données** et **permissions** (notamment côté bot Discord).
+
+## Avant un push sur GitHub
+
+- **`DISCORD_TOKEN`** : secret — ne doit exister que dans ton `.env` local (non versionné). Si tu l’as commité par erreur, **révoque le jeton** immédiatement dans le portail développeur Discord et en génère un nouveau.
+- **`DISCORD_CLIENT_ID`** et **`DISCORD_GUILD_ID`** : moins critiques qu’un token, mais inutiles et parfois indésirables dans l’historique public ; garde-les dans `.env`.
+- Le dépôt ignore `.env`, `.env.*` (sauf `.env.example`) et des noms de fichiers sensibles courants ; voir [`.gitignore`](.gitignore). Un `git add -f .env` **contourne** l’ignore : à éviter absolument.
+- Sur GitHub : active **Secret scanning** et, si possible, **Push protection** pour le dépôt ([documentation](https://docs.github.com/code-security/secret-scanning/about-secret-scanning)).
+
+Un workflow CI ([`.github/workflows/repo-secrets-guard.yml`](.github/workflows/repo-secrets-guard.yml)) échoue si un fichier `.env` (autre que `.env.example`) est **suivi par Git** — par exemple après un `git add -f .env`. Active aussi **Secret scanning** sur GitHub pour la détection de secrets connus dans les diffs.
