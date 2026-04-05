@@ -1,0 +1,41 @@
+name: Idée / fonctionnalité
+description: Proposer une amélioration ou une nouvelle capacité pour WeBot
+title: "[Idée] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        WeBot est **open source** : les idées les plus utiles pour la communauté Discord au sens large sont les bienvenues. Les contributions sont **revues par les mainteneurs** avant intégration.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problème ou besoin
+      description: Quel manque ou friction cette idée adresse-t-elle ?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposition
+      description: Décris la solution ou le comportement souhaité (commandes, permissions, cas d’usage serveur).
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives envisagées
+      description: Autres approches possibles, ou ce que font d’autres outils.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmation
+      options:
+        - label: J’ai lu le Code de conduite et le guide de contribution
+          required: true
